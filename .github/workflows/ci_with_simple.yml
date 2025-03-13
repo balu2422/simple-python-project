@@ -1,19 +1,12 @@
-
----
-
-## **🚀 6. `.github/workflows/python-app.yml`** (CI/CD with GitHub Actions)  
-This workflow does the following:  
-✅ Installs dependencies  
-✅ Runs tests  
-✅ Stores test results  
-✅ Zips and stores the application as an artifact  
-
-```yaml
 name: Python CI/CD
 
-on: 
+on:  # <-- This defines when the workflow triggers
   push:
+    branches:
+      - main
   pull_request:
+    branches:
+      - main
 
 jobs:
   build-and-test:
